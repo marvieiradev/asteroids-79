@@ -4,11 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Neon Asteroids</title>
 </head>
 
 <body>
+    <div class="b-panel">
+        Pontuação:<span id="g-score">0</span>
+        <div class="b-panel_right">
+            Mudar cor:
+            <label><input onclick="ChangeGameColor(1)" name="color" type="radio">Clássico</label>
+            <label><input onclick="ChangeGameColor(0)" name="color" type="radio" checked="checked">Verde</label>
+            <label><input onclick="ChangeGameColor(2)" name="color" type="radio">Azul</label>
+        </div>
+    </div>
 
+    <canvas id="g-game"></canvas>
+    <div id="g-endgame" class="b-msgbox">
+        <div id="g-leaderboard"></div>
+        <button class="b-button" onclick="SaveScore(game.score, this)">Salvar Pontuação</button>
+        <button class="b-button" onclick="(function(){window.location.href=window.location.pathname})()">Novo
+            Jogo</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
